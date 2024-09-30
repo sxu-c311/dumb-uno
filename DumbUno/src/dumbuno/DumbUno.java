@@ -17,14 +17,19 @@ public class DumbUno
         //Put the players into a circular linked list
         IntNode startPlayer = new IntNode(0,null);
         IntNode current = startPlayer;
+        
         current.setNext(new IntNode(0,null));
         current = current.getNext();
+        
         current.setNext(new IntNode(0,null));
         current = current.getNext();
+        
         current.setNext(new IntNode(0,null));
         current = current.getNext();
+        
         current.setNext(new IntNode(0,null));
         current = current.getNext();
+        
         current.setNext(startPlayer);
         
         //Deal every player a hand
