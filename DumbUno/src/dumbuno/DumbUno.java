@@ -42,7 +42,8 @@ public class DumbUno
         current = startPlayer;
         while (current.getData() > 1)
         {
-            //Student implementation
+            current = current.getNext();
+            startPlayer = current;
         }
         System.out.println("I win!");
         
@@ -50,7 +51,11 @@ public class DumbUno
     
     private static void printGame(IntNode startPlayer)
     {
-        //Student implementation
+        IntNode current = startPlayer;
+        do{
+            System.out.println(current.getData());
+            current = current.getNext();
+        } while(current != startPlayer);
     }
     
 }
