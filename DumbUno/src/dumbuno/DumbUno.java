@@ -31,7 +31,7 @@ public class DumbUno
         current = startPlayer;
         while (current.getNext() != startPlayer)
         {
-            current.setData(rng.nextInt(minHandSize, maxHandSize+1));
+            current.setData(rng.nextInt(maxHandSize-minHandSize+1)+minHandSize);
             current = current.getNext();
         }
         
