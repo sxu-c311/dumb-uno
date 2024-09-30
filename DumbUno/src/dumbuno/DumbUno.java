@@ -45,7 +45,7 @@ public class DumbUno
         int turn = 1;
         while (current.getData() > 1)
         {
-            System.out.println("turn " + turn + ", Remove -1");
+            System.out.println("turn " + turn + ", Remove -1 from " + current.getData());
             
             current.setData(current.getData() -1);
             current = current.getNext();
