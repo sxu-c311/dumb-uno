@@ -37,13 +37,19 @@ public class DumbUno
         }
         
         printGame(startPlayer);
+        System.out.println("");
         
         //Play the game
+        System.out.println("Game starts:");
         current = startPlayer;
         while (current.getData() > 1)
         {
+            System.out.println("Remove " + current.getData());
+            
             current = current.getNext();
             startPlayer = current;
+            printGame(startPlayer);
+            System.out.println("");
         }
         System.out.println("I win!");
         
