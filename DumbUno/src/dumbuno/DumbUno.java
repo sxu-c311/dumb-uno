@@ -36,6 +36,7 @@ public class DumbUno
             current = current.getNext();
         } while (current != startPlayer);
         
+        System.out.println("Original List: ");
         printGame(startPlayer);
         System.out.println("");
         
