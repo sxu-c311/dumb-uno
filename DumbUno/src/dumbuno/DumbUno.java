@@ -1,5 +1,6 @@
 //This is an Uno game simulation.
 //Created by James Vanderhyde, 30 September 2024
+//modified by Luis Villagomez, 30 September 2024
 
 package dumbuno;
 
@@ -29,19 +30,29 @@ public class DumbUno
         
         //Deal every player a hand
         current = startPlayer;
-        while (current.getNext() != startPlayer)
+        do
         {
             current.setData(rng.nextInt(minHandSize, maxHandSize+1));
             current = current.getNext();
-        }
+        } while (current != startPlayer);
         
+        System.out.println("Original List: ");
         printGame(startPlayer);
+        System.out.println("");
         
         //Play the game
+        System.out.println("Game starts:");
         current = startPlayer;
+        int turn = 1;
         while (current.getData() > 1)
         {
-            //Student implementation
+            System.out.println("turn " + turn + ", Remove -1 from " + current.getData());
+            
+            current.setData(current.getData() -1);
+            current = current.getNext();
+            printGame(current);
+            System.out.println("");
+            turn++;
         }
         System.out.println("I win!");
         
@@ -49,7 +60,11 @@ public class DumbUno
     
     private static void printGame(IntNode startPlayer)
     {
-        //Student implementation
+        IntNode current = startPlayer;
+        do{
+            System.out.println(current.getData());
+            current = current.getNext();
+        } while(current != startPlayer);
     }
     
 }
