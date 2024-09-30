@@ -15,17 +15,17 @@ public class DumbUno
         final int minHandSize = 3;
         
         //Put the players into a circular linked list
-        IntNode startPlayer = new IntNode(0,null);
+        IntNode startPlayer = new IntNode(0,null); //Player 1
         IntNode current = startPlayer;
-        current.setNext(new IntNode(0,null));
+        current.setNext(new IntNode(0,null)); //Player 2
         current = current.getNext();
-        current.setNext(new IntNode(0,null));
+        current.setNext(new IntNode(0,null)); //Player 3
         current = current.getNext();
-        current.setNext(new IntNode(0,null));
+        current.setNext(new IntNode(0,null)); //Player 4
         current = current.getNext();
-        current.setNext(new IntNode(0,null));
+        current.setNext(new IntNode(0,null)); //Player 5
         current = current.getNext();
-        current.setNext(startPlayer);
+        current.setNext(startPlayer); //Close the loop
         
         //Deal every player a hand
         current = startPlayer;
