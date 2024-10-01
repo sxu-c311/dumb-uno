@@ -41,7 +41,8 @@ public class DumbUno
         current = startPlayer;
         while (current.getData() > 1)
         {
-            //Student implementation
+            current.setData(current.getData()-1);
+            current = current.getNext();
         }
         System.out.println("I win!");
         
