@@ -1,5 +1,6 @@
 //This is an Uno game simulation.
 //Created by James Vanderhyde, 30 September 2024
+//Modified by: Sebastian Szuba 9/30/2024
 
 package dumbuno;
 
@@ -41,7 +42,12 @@ public class DumbUno
         current = startPlayer;
         while (current.getData() > 1)
         {
-            //Student implementation
+            current.setData(current.getData() - 1);
+            
+            if (current.getData() == 1) {
+                System.out.println("Uno!");
+            }
+            current = current.getNext();
         }
         System.out.println("I win!");
         
@@ -49,7 +55,11 @@ public class DumbUno
     
     private static void printGame(IntNode startPlayer)
     {
-        //Student implementation
+        IntNode current = startPlayer;
+        do {
+            System.out.println("Player hand size: " + current.getData());
+            current = current.getNext();
+        }
+        while (current != startPlayer);
     }
-    
 }
